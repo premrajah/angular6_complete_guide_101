@@ -1,2 +1,23 @@
-<p>Servers</p>
-<app-server></app-server>
+<hr>
+<label>Serve Name</label>
+<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)"> -->
+<input type="text" class="form-control" [(ngModel)]="serverName">
+<p>{{ serverName }}</p>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server
+</button>
+<p>Property binding</p>
+<p [innerText]="allowNewServer"></p>
+<hr>
+<p>String Interpolation</p>
+<p>{{ allowNewServer }}</p>
+<hr>
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<p *ngIf="serverCreated; else noServer">Server was created, Server name is {{ serverName }}</p>
+<ng-template  #noServer>
+  <p>No server was created</p>
+</ng-template>
+
+<hr>
+<app-server *ngFor="let server of servers"></app-server>
+
+

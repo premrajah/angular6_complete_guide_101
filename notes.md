@@ -21,4 +21,11 @@ ng g c component-name
  <!-- Two way binding -->
  ([(ngModel)]="data")
 
+<!-- angular reserver word -->
+ $event 
+
+ <!-- Directives -->
+ *ngIf=""
+ *ngFor="let variable of array"
+
  
